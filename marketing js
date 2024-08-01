@@ -1,0 +1,101 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const productContainer = document.getElementById('product-container');
+    const inventoryForm = document.getElementById('inventory-form');
+    const customizeStoreButton = document.getElementById('customize-store');
+    const generateIdeasButton = document.getElementById('generate-ideas');
+    const aiInput = document.getElementById('ai-input');
+    const aiOutput = document.getElementById('ai-output');
+
+    // Function to add a product to the storefront
+    function addProduct(name, description, price, stock, imageUrl) {
+        const newProduct = document.createElement('div');
+        newProduct.className = 'product';
+       
+        const productImage = document.createElement('img');
+        productImage.src = imageUrl;
+        productImage.alt = 'Product Image';
+        productImage.className = 'product-image';
+       
+        const productDetails = document.createElement('div');
+        productDetails.className = 'product-details';
+       
+        const productName = document.createElement('h3');
+        productName.className = 'product-name';
+        productName.textContent = name;
+       
+        const productDescription = document.createElement('p');
+        productDescription.className = 'product-description';
+        productDescription.textContent = description;
+       
+        const productPrice = document.createElement('p');
+        productPrice.className = 'product-price';
+        productPrice.textContent = `$${price.toFixed(2)}`;
+       
+        const productStock = document.createElement('p');
+        productStock.className = 'product-stock';
+        productStock.textContent = `Stock: ${stock}`;
+       
+        productDetails.appendChild(productName);
+        productDetails.appendChild(productDescription);
+        productDetails.appendChild(productPrice);
+        productDetails.appendChild(productStock);
+       
+        newProduct.appendChild(productImage);
+        newProduct.appendChild(productDetails);
+       
+        productContainer.appendChild(newProduct);
+    }
+   
+    // Handle form submission
+    inventoryForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+       
+        const name = document.getElementById('product-name').value;
+        const description = document.getElementById('product-description').value;
+        const price = parseFloat(document.getElementById('product-price').value);
+        const stock = parseInt(document.getElementById('product-stock').value, 10);
+        const imageFile = document.getElementById('product-image').files[0];
+        const imageUrl = URL.createObjectURL(imageFile);
+       
+        addProduct(name, description, price, stock, imageUrl);
+       
+        // Reset the form
+        inventoryForm.reset();
+    });
+
+    // Handle storefront customization (toggle dark mode)
+    customizeStoreButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+
+    // Predefined questions and corresponding answers
+    const qaPairs = [
+        {
+            question: "How can I improve my product descriptions?",
+            answer: "To enhance product descriptions, focus on unique features, use engaging language, and include keywords for SEO. Visual elements and customer testimonials also help."
+        },
+        {
+            question: "What are some effective social media strategies?",
+            answer: "Effective strategies include posting consistently, engaging with your audience, using hashtags, running ads, and collaborating with influencers."
+        },
+        {
+            question: "How can I attract more visitors to my online store?",
+            answer: "Attract more visitors by optimizing for SEO, offering promotions, using email marketing, and leveraging social media and content marketing."
+        }
+    ];
+
+    // Handle AI Suggestions (mock functionality)
+    generateIdeasButton.addEventListener('click', async () => {
+        const userInput = aiInput.value.trim().toLowerCase();
+        aiOutput.textContent = 'Generating ideas...';
+
+        setTimeout(() => {
+            const match = qaPairs.find(pair => userInput.includes(pair.question.toLowerCase()));
+            if (match) {
+                aiOutput.textContent = match.answer;
+            } else {
+                aiOutput.textContent = "Enter the questions on AI-Suggesstions Box";
+            }
+        }, 1000);
+    });
+});
