@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizBooster - Empower Your Business</title>
+  <link rel="stylesheet" href="page.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Login Form -->
+    <div id="loginPage" class="form-container">
+      <div class="form-header">
+        <h2>Login</h2>
+        <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+      </div>
+      <form id="loginForm" class="form">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <label for="userRole">Login as:</label>
+        <select id="userRole">
+          <option value="customer">Customer</option>
+          <option value="entrepreneur">Entrepreneur</option>
+        </select>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Registration Form -->
+    <div id="registerPage" class="form-container hidden">
+      <div class="form-header">
+        <h2>Register</h2>
+        <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+      </div>
+      <form id="registerForm" class="form">
+        <input type="email" id="registerEmail" placeholder="Email" required>
+        <input type="password" id="registerPassword" placeholder="Password" required>
+        <input type="password" id="registerConfirmPassword" placeholder="Confirm Password" required>
+        <label for="registerUserRole">Register as:</label>
+        <select id="registerUserRole">
+          <option value="customer">Customer</option>
+          <option value="entrepreneur">Entrepreneur</option>
+        </select>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <!-- Storefront Display -->
+    <div id="storefrontDisplay" class="form-container hidden">
+      <div class="form-header">
+        <h2>Storefront</h2>
+        <button id="profileButton" class="hidden">My Profile</button>
+      </div>
+      <div id="storeList" class="store-list">
+        <!-- Default stores will be listed here -->
+      </div>
+    </div>
+
+    <!-- Store Page -->
+    <div id="storePage" class="form-container hidden">
+      <div class="form-header">
+        <h2 id="storeTitle">Store Name</h2>
+        <button id="backToStorefront">Back to Storefront</button>
+      </div>
+      <div id="productList" class="product-list">
+        <!-- Products for the selected store will be listed here -->
+      </div>
+    </div>
+
+    <!-- Entrepreneur Profile Page -->
+    <div id="entrepreneurProfilePage" class="form-container hidden">
+      <div class="form-header">
+        <h2>My Store</h2>
+        <button id="addProductButton">Add a Product</button>
+      </div>
+      <div id="myProductList" class="product-list"></div>
+    </div>
+
+    <!-- Add Product Form -->
+    <div id="addProductPage" class="form-container hidden">
+      <div class="form-header">
+        <h2>Add a Product</h2>
+      </div>
+      <form id="addProductForm" class="form">
+        <input type="text" id="productName" placeholder="Product Name" required>
+        <textarea id="productDescription" placeholder="Product Description" required></textarea>
+        <input type="number" id="productPrice" placeholder="Product Price" required>
+        <input type="file" id="productImage" accept="image/*" required>
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 BizBooster - Empowering Mini & Nano Entrepreneurs</p>
+  </footer>
+  <script src="page.js"></script>
+</body>
+</html>
