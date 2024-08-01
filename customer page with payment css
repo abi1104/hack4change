@@ -1,0 +1,145 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    height: 100%;
+    color: #fff;
+  }
+  
+  .logo-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .logo-container h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ff5722;
+    text-shadow: 2px 2px #4e54c8;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+  
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .form-header h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  
+  .form-header p {
+    margin-bottom: 20px;
+  }
+  
+  .form input, .form select, .form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #673ab7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form button:hover {
+    background-color: #4527a0;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+  
+  .storefront-container, .profile-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-list, .store-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .product-card, .store-card {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: calc(33.333% - 40px);
+    text-align: center;
+  }
+  
+  .product-card img, .store-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .store-card {
+    cursor: pointer;
+  }
+  .payment-section {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .payment-section input {
+    margin-bottom: 10px;
+  }
+  
+  .payment-section button {
+    background-color: #4caf50;
+    transition: background-color 0.3s;
+  }
+  
+  .payment-section button:hover {
+    background-color: #388e3c;
+  }
+  
