@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Storefront</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Online Storefront</h1>
+        <button id="customize-store">Theme</button>
+    </header>
+
+    <main>
+        <section id="product-listings">
+            <h2>Product Listings</h2>
+            <div id="product-container">
+                <!-- Product listings will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="inventory-management">
+            <h2>Inventory Management</h2>
+            <form id="inventory-form">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" required>
+
+                <label for="product-description">Description:</label>
+                <textarea id="product-description" required></textarea>
+
+                <label for="product-price">Price:</label>
+                <input type="number" id="product-price" required step="0.01">
+
+                <label for="product-stock">Stock Level:</label>
+                <input type="number" id="product-stock" required>
+
+                <label for="product-image">Product Image:</label>
+                <input type="file" id="product-image" accept="image/*" required>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </section>
+
+        <div id="ai-suggestions">
+            <h3>AI Suggestions</h3>
+            <textarea id="ai-input" placeholder="Ask a question about your marketing strategy or content ideas..."></textarea>
+            <button id="generate-ideas">Generate Ideas</button>
+            <div id="ai-output"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Online Storefront</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
