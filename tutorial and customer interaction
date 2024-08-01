@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Tutorials for Entrepreneurs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #333;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .hero {
+      background-color: #f4f4f4;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+    }
+
+    .hero p {
+      margin: 10px 0;
+    }
+
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .tutorials ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .tutorials ul li {
+      margin: 10px 0;
+    }
+
+    .tutorials ul li a {
+      text-decoration: none;
+      color: #007bff;
+      cursor: pointer;
+    }
+
+    .tutorials ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .tutorial-content iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 315px;
+      border: none;
+      margin: 10px 0;
+    }
+
+    /* Feedback Form */
+    .feedback-form {
+      margin-top: 20px;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+    }
+
+    .feedback-form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    .feedback-form input, .feedback-form textarea, .feedback-form select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+
+    .feedback-form textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    .feedback-form button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .feedback-form button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Popup Message */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .popup-content button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('tutorials')">Tutorials</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Page -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <h1>Welcome to Business Tutorials</h1>
+        <p>Helping mini and nano entrepreneurs succeed</p>
+        <a class="btn" onclick="showPage('tutorials')">Start Learning</a>
+      </div>
+    </section>
+
+    <!-- Tutorials Page -->
+    <section id="tutorials" class="page">
+      <div class="tutorials">
+        <h2>Our Tutorials</h2>
+        <ul>
+          <li><a onclick="showTutorial('tutorial1')">How to Start Your Business</a></li>
+          <li><a onclick="showTutorial('tutorial2')">Marketing Strategies</a></li>
+          <li><a onclick="showTutorial('tutorial3')">Financial Management</a></li>
+          <li><a onclick="showTutorial('tutorial4')">Customer Relationship Management</a></li>
+          <li><a onclick="showTutorial('tutorial6')">Social Media Marketing</a></li>
+          <li><a onclick="showTutorial('tutorial7')">Product Development</a></li>
+          <li><a onclick="showTutorial('tutorial13')">Sales Techniques</a></li>
+        </ul>
+
+        <!-- Feedback Form -->
+        <div class="feedback-form">
+          <h3>Give Us Your Feedback</h3>
+          <form onsubmit="submitFeedback(event)">
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+
+            <label for="rating">Rating</label>
+            <select id="rating" required>
+              <option value="" disabled selected>Rate the tutorial</option>
+              <option value="5">5 - Excellent</option>
+              <option value="4">4 - Good</option>
+              <option value="3">3 - Average</option>
+              <option value="2">2 - Poor</option>
+              <option value="1">1 - Terrible</option>
+            </select>
+
+            <label for="comments">Comments</label>
+            <textarea id="comments" placeholder="Share your thoughts"></textarea>
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tutorials Content -->
+      <div id="tutorial1" class="tutorial-content">
+        <h3>How to Start Your Business</h3>
+        <p>Learn the basics of starting a business...</p>
+        <p>Watch these videos to get started:</p>
+        <iframe src="https://www.youtube.com/embed/bXLZ8I7s8tw" allowfullscreen></iframe>
+        <p><em>5 Steps to Start Your First Business</em></p>
+        <iframe src="https://www.youtube.com/embed/uOA5h_KdjO4" allowfullscreen></iframe>
+        <p><em>How to start a Business by Dhruv Rathee | Being an Entrepreneur in India</em></p>
+      </div>
+      <div id="tutorial2" class="tutorial-content">
+        <h3>Marketing Strategies</h3>
+        <p>Effective ways to market your products...</p>
+        <p>Watch these videos for insights:</p>
+        <iframe src="https://www.youtube.com/embed/ZvChhHNTz1g" allowfullscreen></iframe>
+        <p><em>6 Effective Marketing Strategies for 2024 to grow ANY Business</em></p>
+        <iframe src="https://www.youtube.com/embed/jyLbeQtbqAY" allowfullscreen></iframe>
+        <p><em>17 Guerrilla Marketing Tactics For Entrepreneurs (PROVEN & EFFECTIVE)</em></p>
+      </div>
+      <div id="tutorial3" class="tutorial-content">
+        <h3>Financial Management</h3>
+        <p>Learn how to manage your business finances effectively...</p>
+        <p>Watch these videos for guidance:</p>
+        <iframe src="https://www.youtube.com/embed/XnqUkFxHQ3Y" allowfullscreen></iframe>
+        <p><em>Smarter Tomorrow Podcast - Episode 9 with Tesh Mbaabu - Financial Management in Business</em></p>
+        <iframe src="https://www.youtube.com/embed/ONvj02AglGM" allowfullscreen></iframe>
+        <p><em>Money Management Tips For Digital Entrepreneurs</em></p>
+      </div>
+      <div id="tutorial4" class="tutorial-content">
+        <h3>Customer Relationship Management</h3>
+        <p>Learn how to manage customer relationships effectively...</p>
+        <p>Watch these videos for insights:</p>
+        <iframe src="https://www.youtube.com/embed/H6htt_I2Ddk" allowfullscreen></iframe>
+        <p><em>What is CRM? | Customer Relationship Management</em></p>
+        <iframe src="https://www.youtube.com/embed/6KLUm-Ych74" allowfullscreen></iframe>
+        <p><em>Customer Relationship Management | Main Components of CRM | Great Learning</em></p>
+      </div>
+      <div id="tutorial6" class="tutorial-content">
+        <h3>Social Media Marketing</h3>
+        <p>Strategies to promote your business on social media platforms...</p>
+        <p>Watch these videos for tips:</p>
+        <iframe src="https://www.youtube.com/embed/91D5hjMEADg" allowfullscreen></iframe>
+        <p><em>55 Minutes of Social Media Content Strategy for Entrepreneurs</em></p>
+        <iframe src="https://www.youtube.com/embed/RmwI_QqcPQc" allowfullscreen></iframe>
+        <p><em>Social Media Marketing Insights</em></p>
+      </div>
+      <div id="tutorial7" class="tutorial-content">
+        <h3>Product Development</h3>
+        <p>Designing and developing products, understanding product lifecycle...</p>
+        <p>Watch these videos for insights:</p>
+        <iframe src="https://www.youtube.com/embed/r-98YRAF1dY" allowfullscreen></iframe>
+        <p><em>How to Build a Product that Scales into a Company</em></p>
+        <iframe src="https://www.youtube.com/embed/cnp6Ck8OIiY" allowfullscreen></iframe>
+        <p><em>Product Development Insights</em></p>
+      </div>
+      <div id="tutorial13" class="tutorial-content">
+        <h3>Sales Techniques</h3>
+        <p>Sales strategies, negotiation skills, customer service...</p>
+        <p>Watch these videos for effective sales techniques:</p>
+        <iframe src="https://www.youtube.com/embed/p-nQzB51lsE" allowfullscreen></iframe>
+        <p><em>The Psychology of Selling: 13 Steps to Selling that Work</em></p>
+        <iframe src="https://www.youtube.com/embed/6pY7EjqD3QA" allowfullscreen></iframe>
+        <p><em>Sales Techniques Insights</em></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Business Tutorials</p>
+  </footer>
+
+  <!-- Popup Message -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h4>Thank You!</h4>
+      <p>Your feedback has been received, <span id="user-name"></span>!</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      // Hide all pages
+      var pages = document.querySelectorAll('.page');
+      pages.forEach(function(page) {
+        page.classList.remove('active');
+      });
+
+      // Show the selected page
+      document.getElementById(pageId).classList.add('active');
+
+      // If the page is "tutorials", scroll to the top
+      if (pageId === 'tutorials') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function showTutorial(tutorialId) {
+      // Hide all tutorials
+      var tutorials = document.querySelectorAll('.tutorial-content');
+      tutorials.forEach(function(tutorial) {
+        tutorial.style.display = 'none';
+      });
+
+      // Show the selected tutorial
+      document.getElementById(tutorialId).style.display = 'block';
+
+      // Scroll to the selected tutorial
+      document.getElementById(tutorialId).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function submitFeedback(event) {
+      event.preventDefault();
+      // Get user input values
+      var name = document.getElementById('name').value;
+      var rating = document.getElementById('rating').value;
+      var comments = document.getElementById('comments').value;
+
+      // Display the user's name in the popup message
+      document.getElementById('user-name').textContent = name;
+
+      // Reset form fields
+      document.getElementById('name').value = '';
+      document.getElementById('rating').value = '';
+      document.getElementById('comments').value = '';
+
+      // Show the popup message
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+      // Hide the popup message
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    // Initialize by showing the first tutorial content
+    document.addEventListener('DOMContentLoaded', function() {
+      showTutorial('tutorial1');
+    });
+  </script>
+</body>
+</html>
